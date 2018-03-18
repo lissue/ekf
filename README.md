@@ -21,7 +21,7 @@ Code compiles without errors with `cmake` and `make`.
 
 ### Accuracy
 The px, py, vx, vy output coordinates have an RMSE <= [.11, .11, 0.52, 0.52] when using the file: "obj_pose-laser-radar-synthetic-input.txt", as shown below:
-![Simulator](Capture.png)
+![Simulator](Capture.PNG)
 
 # Reference Information
 This project involves the Term 2 Simulator which can be downloaded [here](https://github.com/udacity/self-driving-car-sim/releases)
