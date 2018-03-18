@@ -53,6 +53,13 @@ FusionEKF::FusionEKF() {
   //set the acceleration noise components
 	noise_ax = 9;
 	noise_ay = 9;
+
+  H_laser_ << 1,0,0,0,
+          0,1,0,0;
+
+  Hj_ << 1,1,0,0,
+         1,1,0,0,
+         1,1,1,1;
 }
 
 /**
