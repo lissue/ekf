@@ -64,6 +64,7 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
     phi -= (2 * M_PI);
   }
   while (phi < -M_PI){
+    cout << "********************************" << endl;
     phi += (2 * M_PI);
   }
   float rho_dot;
