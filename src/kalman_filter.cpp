@@ -1,5 +1,6 @@
 #include "kalman_filter.h"
-
+#include <iostream>
+using namespace std;
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
 
@@ -57,8 +58,9 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
   */
   float rho = sqrt(x_(0)*x_(0) + x_(1)*x_(1));
   float phi = atan2(x_(1), x_(0));
-  //normailze the angles so y[1] always stays between -Pi and + Pi
+  //normailze the angles so phi always stays between -Pi and + Pi
   while (phi > M_PI){
+    cout << "********************************" << endl;
     phi -= (2 * M_PI);
   }
   while (phi < -M_PI){
