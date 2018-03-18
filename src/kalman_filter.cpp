@@ -57,6 +57,13 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
   */
   float rho = sqrt(x_(0)*x_(0) + x_(1)*x_(1));
   float phi = atan2(x_(1), x_(0));
+  //normailze the angles so y[1] always stays between -Pi and + Pi
+  while (phi > M_PI){
+    phi -= (2 * M_PI);
+  }
+  while (phi < -M_PI){
+    phi += (2 * M_PI);
+  }
   float rho_dot;
   if (fabs(rho) < 0.0001) {
     rho_dot = 0;
